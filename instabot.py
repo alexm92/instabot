@@ -4,6 +4,7 @@ import os
 import sys
 import time
 import logging
+import logging.handlers
 import cPickle
 import random
 
@@ -13,8 +14,11 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
-logging.basicConfig(stream=sys.stdout, level=logging.INFO, format='[%(levelname)s] %(asctime)-15s %(pathname)s:%(lineno)d - %(message)s')
+logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(asctime)-15s %(pathname)s:%(lineno)d - %(message)s')
+handler = logging.handlers.SysLogHandler(address='/dev/log')
 log = logging.getLogger(__name__)
+log.addHandler(handler)
+
 COOKIES_FILENAME = os.path.join(os.path.dirname(__file__), '.cookies.pkl')
 
 def login_with_credentials(browser):
