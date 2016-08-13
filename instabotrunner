@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export ACCESS_TOKEN='<YOUR_INSTAGRAM_ACCESS_TOKEN>'
+export USERNAME='<YOUR_INSTAGRAM_USERNAME>'
+export PASSWORD='<YOUR_INSTAGRAM_PASSWORD>'
+
+python ~/repos/instabot/instabot.py
+
